@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+    <!-- iOS App Icon Hintergrund mit abgerundeten Ecken -->
+    <path
+            d="M217.45 0C96.96 0 0 96.96 0 217.45v589.1C0 927.04 96.96 1024 217.45 1024h589.1c120.49 0 217.45-96.96 217.45-217.45v-589.1C1024 96.96 927.04 0 806.55 0h-589.1z"
+            fill="#E3F2FD"
+    />
+
+    <!-- Kind (in der Mitte) - skaliert für 1024x1024 -->
+    <g stroke="#2196F3" stroke-width="20" stroke-linecap="round" fill="none">
+        <circle cx="512" cy="384" r="61" /> <!-- Kopf -->
+        <line x1="512" y1="445" x2="512" y2="589" /> <!-- Körper -->
+        <line x1="435" y1="512" x2="589" y2="512" /> <!-- Arme -->
+        <line x1="512" y1="589" x2="461" y2="717" /> <!-- Linkes Bein -->
+        <line x1="512" y1="589" x2="563" y2="717" /> <!-- Rechtes Bein -->
+    </g>
+
+    <!-- Erwachsener links -->
+    <g stroke="#1976D2" stroke-width="20" stroke-linecap="round" fill="none">
+        <circle cx="333" cy="307" r="77" /> <!-- Kopf -->
+        <line x1="333" y1="384" x2="333" y2="614" /> <!-- Körper -->
+        <line x1="230" y1="486" x2="435" y2="486" /> <!-- Arme -->
+        <line x1="333" y1="614" x2="256" y2="794" /> <!-- Linkes Bein -->
+        <line x1="333" y1="614" x2="410" y2="794" /> <!-- Rechtes Bein -->
+    </g>
+
+    <!-- Erwachsener rechts -->
+    <g stroke="#1976D2" stroke-width="20" stroke-linecap="round" fill="none">
+        <circle cx="691" cy="307" r="77" /> <!-- Kopf -->
+        <line x1="691" y1="384" x2="691" y2="614" /> <!-- Körper -->
+        <line x1="589" y1="486" x2="794" y2="486" /> <!-- Arme -->
+        <line x1="691" y1="614" x2="614" y2="794" /> <!-- Linkes Bein -->
+        <line x1="691" y1="614" x2="768" y2="794" /> <!-- Rechtes Bein -->
+    </g>
+</svg>

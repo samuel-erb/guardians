@@ -4,6 +4,8 @@ import './globals.css';
 import React from 'react';
 import { Battery100Icon, SignalIcon } from '@heroicons/react/24/outline';
 import { TabBar } from '@/components/tab-bar';
+import Image from "next/image";
+import icon from "@/app/icon.svg";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +21,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="de">
-        <body className={`${inter.className} bg-gray-900 min-h-screen flex items-center justify-center`}>
+        <body className={`${inter.className} bg-gray-900 min-h-screen flex gap-4 flex-col items-center justify-center`}>
         <div className="w-[393px] h-[852px] bg-gray-50 flex flex-col relative overflow-hidden rounded-[55px] shadow-2xl">
             {/* Status Bar */}
             <div className="bg-black text-white h-12 flex items-center justify-between px-6 safe-top">
@@ -43,6 +45,10 @@ export default function RootLayout({
 
             {/* Tab Bar */}
             <TabBar />
+        </div>
+        <div className={"flex items-center gap-4"}>
+            <Image className={"w-10 h-10"} src={icon} alt={"Icon"}/>
+            <span className={"text-2xl"}>iParent Prototype</span>
         </div>
         </body>
         </html>
