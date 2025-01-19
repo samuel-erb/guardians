@@ -110,7 +110,7 @@ export default function NotificationsPage() {
                         onClick={() => markAsRead(notification.id)}
                     >
                         <div className="flex space-x-4">
-                            <div className={`flex-shrink-0 rounded-full p-2 ${getNotificationColor(notification.type)}`}>
+                            <div className={`flex-shrink-0 w-10 h-10 rounded-full p-2 ${getNotificationColor(notification.type)}`}>
                                 {getNotificationIcon(notification.type)}
                             </div>
                             <div className="flex-1">
