@@ -15,7 +15,7 @@ import {
 import { usePathname, useRouter } from 'next/navigation';
 
 const tabs = [
-    { name: 'Home', href: '/', icon: HomeIcon, activeIcon: HomeIconSolid },
+    { name: 'Home', href: '/home', icon: HomeIcon, activeIcon: HomeIconSolid },
     { name: 'Suche', href: '/search', icon: MagnifyingGlassIcon, activeIcon: MagnifyingGlassIconSolid },
     { name: 'Mitteilungen', href: '/notifications', icon: BellIcon, activeIcon: BellIconSolid },
     { name: 'Profil', href: '/profile', icon: UserIcon, activeIcon: UserIconSolid }

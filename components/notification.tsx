@@ -1,20 +1,33 @@
-import React from 'react';
+"use client"
+import React, {JSX} from 'react';
 import { BellIcon } from 'lucide-react';
+import {useRouter} from "next/navigation";
 
 interface Props {
     appName: string;
     notificationText: string;
+    openLink: string;
+    icon?: JSX.Element;
 }
 
-const IOSNotification = ({appName, notificationText}: Props) => {
+const IOSNotification = ({appName, notificationText, openLink, icon}: Props) => {
+    const router = useRouter();
     return (
-        <div className="w-full max-w-sm bg-white/90 backdrop-blur-lg rounded-2xl p-3 shadow-lg mx-auto">
+        <div className="w-full max-w-sm bg-white/90 backdrop-blur-lg rounded-2xl p-3 shadow-lg absolute left-1/2 -translate-x-1/2 z-50">
             <div className="flex items-start space-x-3">
                 {/* App Icon */}
                 <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
-                        <BellIcon className="w-7 h-7 text-white" />
-                    </div>
+                    {
+                        icon &&
+                        icon
+
+                    }
+                    {
+                        !icon &&
+                        <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                            <BellIcon className="w-7 h-7 text-white" />
+                        </div>
+                    }
                 </div>
 
                 {/* Content */}
@@ -36,7 +49,7 @@ const IOSNotification = ({appName, notificationText}: Props) => {
 
             {/* Actions */}
             <div className="mt-2 flex space-x-2">
-                <button className="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-1.5 text-sm font-medium">
+                <button onClick={() => router.push(openLink)} className="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-1.5 text-sm font-medium">
                     Öffnen
                 </button>
             </div>
