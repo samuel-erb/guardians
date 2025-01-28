@@ -1,4 +1,3 @@
-// app/notifications/page.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -21,7 +20,7 @@ export default function NotificationsPage() {
             type: 'reminder',
             title: 'Zeit für den Medien-Check',
             message: 'Überprüfen Sie die Bildschirmzeit und Mediennutzung Ihres Kindes.',
-            timestamp: 'Vor 1 Stunde',
+            timestamp: 'Jetzt',
             isRead: false,
             action: 'Jetzt prüfen'
         },
@@ -56,13 +55,13 @@ export default function NotificationsPage() {
     const getNotificationIcon = (type: string) => {
         switch (type) {
             case 'reminder':
-                return <CalendarIcon className="w-6 h-6 text-blue-500" />;
+                return <CalendarIcon className="w-6 h-6 text-[#A44A3F]" />;
             case 'milestone':
-                return <SparklesIcon className="w-6 h-6 text-purple-500" />;
+                return <SparklesIcon className="w-6 h-6 text-[#A44A3F]" />;
             case 'tip':
-                return <InformationCircleIcon className="w-6 h-6 text-green-500" />;
+                return <InformationCircleIcon className="w-6 h-6 text-[#A44A3F]" />;
             case 'update':
-                return <BellIcon className="w-6 h-6 text-orange-500" />;
+                return <BellIcon className="w-6 h-6 text-[#A44A3F]" />;
             default:
                 return <BellIcon className="w-6 h-6 text-gray-500" />;
         }
@@ -71,15 +70,15 @@ export default function NotificationsPage() {
     const getNotificationColor = (type: string) => {
         switch (type) {
             case 'reminder':
-                return 'bg-blue-50';
+                return 'bg-[#CBDFBD]';
             case 'milestone':
-                return 'bg-purple-50';
+                return 'bg-[#F19C79]';
             case 'tip':
-                return 'bg-green-50';
+                return 'bg-[#F6F4D2]';
             case 'update':
-                return 'bg-orange-50';
+                return 'bg-[#D4E09B]';
             default:
-                return 'bg-gray-50';
+                return 'bg-[#F6F4D2]';
         }
     };
 
@@ -90,12 +89,12 @@ export default function NotificationsPage() {
     };
 
     return (
-        <div className="min-h-full bg-gray-50">
+        <div className="min-h-full bg-[#D4E09B]">
             {/* Header */}
-            <div className="bg-white px-4 py-3 sticky top-0 z-10 shadow-sm">
+            <div className="bg-[#F6F4D2] px-4 py-3 sticky top-0 z-10 shadow-sm">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-xl font-semibold">Mitteilungen</h1>
-                    <button className="text-blue-500 text-sm font-medium">
+                    <h1 className="text-xl font-semibold text-gray-900">Mitteilungen</h1>
+                    <button className="text-[#A44A3F] text-sm font-medium">
                         Alle gelesen
                     </button>
                 </div>
@@ -106,31 +105,31 @@ export default function NotificationsPage() {
                 {notifications.map((notification) => (
                     <div
                         key={notification.id}
-                        className={`p-4 rounded-xl shadow-sm ${notification.isRead ? 'bg-white' : getNotificationColor(notification.type)}`}
+                        className={`p-4 rounded-xl shadow-sm ${notification.isRead ? 'bg-[#F6F4D2]' : getNotificationColor(notification.type)}`}
                         onClick={() => markAsRead(notification.id)}
                     >
                         <div className="flex space-x-4">
-                            <div className={`flex-shrink-0 w-10 h-10 rounded-full p-2 ${getNotificationColor(notification.type)}`}>
+                            <div className={`flex-shrink-0 w-10 h-10 rounded-full p-2 ${notification.isRead ? 'bg-[#CBDFBD]' : getNotificationColor(notification.type)}`}>
                                 {getNotificationIcon(notification.type)}
                             </div>
                             <div className="flex-1">
                                 <div className="flex items-start justify-between">
                                     <div>
-                                        <h3 className="font-medium">{notification.title}</h3>
+                                        <h3 className="font-medium text-gray-900">{notification.title}</h3>
                                         <p className="text-gray-600 text-sm mt-1">
                                             {notification.message}
                                         </p>
                                     </div>
                                     {!notification.isRead && (
-                                        <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                                        <div className="w-2 h-2 bg-[#A44A3F] rounded-full" />
                                     )}
                                 </div>
                                 <div className="flex items-center justify-between mt-3">
-                  <span className="text-xs text-gray-500">
-                    {notification.timestamp}
-                  </span>
+                                    <span className="text-xs text-gray-500">
+                                        {notification.timestamp}
+                                    </span>
                                     {notification.action && (
-                                        <button className="text-blue-500 text-sm font-medium">
+                                        <button className="text-[#A44A3F] text-sm font-medium hover:text-[#F19C79] transition-colors">
                                             {notification.action}
                                         </button>
                                     )}
@@ -144,8 +143,8 @@ export default function NotificationsPage() {
             {/* Empty State */}
             {notifications.length === 0 && (
                 <div className="flex flex-col items-center justify-center py-12">
-                    <div className="bg-gray-100 rounded-full p-4 mb-4">
-                        <CheckCircleIcon className="w-8 h-8 text-gray-400" />
+                    <div className="bg-[#F6F4D2] rounded-full p-4 mb-4">
+                        <CheckCircleIcon className="w-8 h-8 text-[#A44A3F]" />
                     </div>
                     <h3 className="text-lg font-medium text-gray-900">
                         Keine neuen Mitteilungen

@@ -1,24 +1,19 @@
 'use client';
 
-import {
-    BellIcon,
-    HomeIcon,
-    MagnifyingGlassIcon,
-    UserIcon
-} from '@heroicons/react/24/outline';
+import {BellIcon, HomeIcon, MagnifyingGlassIcon, UserIcon} from '@heroicons/react/24/outline';
 import {
     BellIcon as BellIconSolid,
     HomeIcon as HomeIconSolid,
     MagnifyingGlassIcon as MagnifyingGlassIconSolid,
     UserIcon as UserIconSolid
 } from '@heroicons/react/24/solid';
-import { usePathname, useRouter } from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
 
 const tabs = [
-    { name: 'Home', href: '/home', icon: HomeIcon, activeIcon: HomeIconSolid },
-    { name: 'Suche', href: '/search', icon: MagnifyingGlassIcon, activeIcon: MagnifyingGlassIconSolid },
-    { name: 'Mitteilungen', href: '/notifications', icon: BellIcon, activeIcon: BellIconSolid },
-    { name: 'Profil', href: '/profile', icon: UserIcon, activeIcon: UserIconSolid }
+    {name: 'Home', href: '/home', icon: HomeIcon, activeIcon: HomeIconSolid},
+    {name: 'Suche', href: '/search', icon: MagnifyingGlassIcon, activeIcon: MagnifyingGlassIconSolid},
+    {name: 'Mitteilungen', href: '/notifications', icon: BellIcon, activeIcon: BellIconSolid},
+    {name: 'Profil', href: '/profile', icon: UserIcon, activeIcon: UserIconSolid}
 ];
 
 export function TabBar() {
@@ -26,7 +21,8 @@ export function TabBar() {
     const router = useRouter();
 
     return (
-        <div className="bg-white border-t border-gray-200 safe-bottom">
+        pathname !== "/register" &&
+        <div className="bg-[#CBDFBD] border-t border-gray-200 safe-bottom">
             <div className="flex justify-around items-center h-16 px-4">
                 {tabs.map((tab) => {
                     const isActive = pathname === tab.href;
@@ -38,14 +34,13 @@ export function TabBar() {
                             onClick={() => router.push(tab.href)}
                             className="flex flex-col items-center"
                         >
-                            <Icon
-                                className={`h-6 w-6 ${
-                                    isActive ? 'text-blue-500' : 'text-gray-500'
-                                }`}
+                            <Icon className={`h-6 w-6 ${
+                                      isActive ? 'text-[#788c69]' : 'text-gray-500'
+                                  }`}
                             />
                             <span
                                 className={`text-xs mt-1 ${
-                                    isActive ? 'text-blue-500 font-medium' : 'text-gray-500'
+                                    isActive ? 'text-[#788c69] font-medium' : 'text-gray-500'
                                 }`}
                             >
                                 {tab.name}

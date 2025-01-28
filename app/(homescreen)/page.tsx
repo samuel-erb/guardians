@@ -1,24 +1,25 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import {
-    Phone,
-    Mail,
+    BatteryChargingIcon,
+    Calculator,
     Calendar,
     Camera,
-    Music2,
-    Settings,
-    Clock,
-    Map,
-    Calculator,
-    Compass,
-    MessageSquare,
     Chrome,
-    LucideIcon
+    Clock,
+    Compass,
+    LucideIcon,
+    Mail,
+    Map,
+    MessageSquare,
+    Music2,
+    Phone,
+    Settings
 } from 'lucide-react';
 import Image from "next/image";
 import icon from "@/app/icon.svg";
 import Link from "next/link";
-import {Battery100Icon, SignalIcon} from "@heroicons/react/24/outline";
+import {SignalIcon} from "@heroicons/react/24/outline";
 import IOSNotification from "@/components/notification";
 
 interface AppIconProps {
@@ -63,7 +64,7 @@ const IOSHomeScreen: React.FC = () => {
         { icon: Calculator, name: "Rechner", color: "bg-gray-800" },
         { icon: Compass, name: "Kompass", color: "bg-gray-600" },
         { icon: MessageSquare, name: "Nachrichten", color: "bg-green-400" },
-        { icon: Chrome, name: "Safari", color: "bg-blue-600" },
+        { icon: Chrome, name: "Chrome", color: "bg-blue-600" },
     ];
 
     return (
@@ -78,12 +79,12 @@ const IOSHomeScreen: React.FC = () => {
                     {/* Battery */}
                     <div className="flex items-center space-x-1">
                         <span className="text-sm">100%</span>
-                        <Battery100Icon className="h-5 w-5 text-white"/>
+                        <BatteryChargingIcon className="h-5 w-5 text-white"/>
                     </div>
                 </div>
             </div>
             <div className={`${show ? "": "hidden"}`}>
-                <IOSNotification appName={"iParent"} notificationText={"Es gibt neue Vorschläge!"} openLink={"/notifications"} icon={<div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
+                <IOSNotification appName={"iParent"} notificationText={"Zeit für den Medien-Check! 📲"} openLink={"/notifications"} icon={<div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
                     <Image src={icon} alt={"Icon"} fill={false}/>
                 </div>} />
             </div>

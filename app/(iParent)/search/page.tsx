@@ -39,32 +39,33 @@ export default function SearchPage() {
             id: 1,
             title: "Prävention",
             topics: ["Medienkonsum", "Selbstvertrauen", "Risikofaktoren"],
-            color: "bg-blue-100 text-blue-600"
+            color: "bg-[#CBDFBD]"
         },
         {
             id: 2,
             title: "Entwicklung",
             topics: ["Alter 0-3", "Alter 4-6", "Alter 7-10", "Teenager"],
-            color: "bg-green-100 text-green-600"
+            color: "bg-[#B56055]"
         },
         {
             id: 3,
             title: "Ernährung",
             topics: ["Gesunde Mahlzeiten", "Süßigkeiten", "Getränke"],
-            color: "bg-orange-100 text-orange-600"
+            color: "bg-[#F19C79]"
         }
     ];
 
     return (
-        <div className="min-h-full bg-gray-50">
+        <div className="min-h-full bg-[#D4E09B]">
+            <div className={"h-0 w-0 bg-[#B56055]"}></div>
             {/* Search Header */}
-            <div className="bg-white px-4 py-3 sticky top-0 z-10 shadow-sm">
+            <div className="bg-[#F6F4D2] px-4 py-3 sticky top-0 z-10 shadow-sm">
                 <div className="relative">
                     <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                         type="text"
                         placeholder="Suche nach Themen, Tipps..."
-                        className="w-full bg-gray-100 pl-10 pr-10 py-3 rounded-xl text-base outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full bg-white pl-10 pr-10 py-3 rounded-xl text-base outline-none focus:ring-2 focus:ring-[#A44A3F] placeholder-gray-400"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onFocus={() => setIsSearchFocused(true)}
@@ -84,10 +85,10 @@ export default function SearchPage() {
                 {/* Recent Searches */}
                 {!searchQuery && (
                     <div className="mb-8">
-                        <h2 className="text-lg font-semibold mb-4">Letzte Suchen</h2>
+                        <h2 className="text-lg font-semibold mb-4 text-gray-900">Letzte Suchen</h2>
                         <div className="space-y-3">
                             {recentSearches.map((search, index) => (
-                                <div key={index} className="flex items-center space-x-3 text-gray-600">
+                                <div key={index} className="flex items-center space-x-3 text-gray-600 bg-[#F6F4D2] p-3 rounded-xl">
                                     <ClockIcon className="w-5 h-5 text-gray-400" />
                                     <span>{search}</span>
                                 </div>
@@ -99,15 +100,15 @@ export default function SearchPage() {
                 {/* Search Suggestions */}
                 {searchQuery && (
                     <div className="mb-8">
-                        <h2 className="text-lg font-semibold mb-4">Vorschläge</h2>
+                        <h2 className="text-lg font-semibold mb-4 text-gray-900">Vorschläge</h2>
                         <div className="space-y-3">
                             {suggestions.map((suggestion) => (
                                 <div
                                     key={suggestion.id}
-                                    className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm"
+                                    className="flex items-center justify-between bg-[#F6F4D2] p-4 rounded-xl shadow-sm hover:bg-[#CBDFBD] transition-colors"
                                 >
                                     <div>
-                                        <h3 className="font-medium">{suggestion.title}</h3>
+                                        <h3 className="font-medium text-gray-900">{suggestion.title}</h3>
                                         <span className="text-sm text-gray-500">{suggestion.category}</span>
                                     </div>
                                     <ArrowRightIcon className="w-5 h-5 text-gray-400" />
@@ -119,19 +120,19 @@ export default function SearchPage() {
 
                 {/* Categories */}
                 <div>
-                    <h2 className="text-lg font-semibold mb-4">Kategorien</h2>
+                    <h2 className="text-lg font-semibold mb-4 text-gray-900">Kategorien</h2>
                     <div className="space-y-6">
                         {categories.map((category) => (
-                            <div key={category.id} className="bg-white p-4 rounded-xl shadow-sm">
-                                <h3 className="font-medium mb-3">{category.title}</h3>
+                            <div key={category.id} className="bg-[#F6F4D2] p-4 rounded-xl shadow-sm">
+                                <h3 className="font-medium mb-3 text-gray-900">{category.title}</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {category.topics.map((topic, index) => (
                                         <span
                                             key={index}
-                                            className={`px-3 py-1 rounded-full text-sm ${category.color}`}
+                                            className={`px-3 py-1 rounded-full text-sm ${category.color} text-gray-900`}
                                         >
-                      {topic}
-                    </span>
+                                            {topic}
+                                        </span>
                                     ))}
                                 </div>
                             </div>

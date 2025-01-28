@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import '../globals.css';
+import type {Metadata} from 'next';
+import {Inter} from 'next/font/google';
+import '@/app/globals.css';
 import React from 'react';
-import { Battery100Icon, SignalIcon } from '@heroicons/react/24/outline';
-import { TabBar } from '@/components/tab-bar';
+import {SignalIcon} from '@heroicons/react/24/outline';
+import {TabBar} from '@/components/tab-bar';
+import {BatteryCharging} from "lucide-react";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,18 +31,18 @@ export default function Layout({
                     {/* Battery */}
                     <div className="flex items-center space-x-1">
                         <span className="text-sm">100%</span>
-                        <Battery100Icon className="h-5 w-5 text-white"/>
+                        <BatteryCharging className="h-5 w-5 text-white"/>
                     </div>
                 </div>
             </div>
 
             {/* Main Content */}
-            <main className="flex-1 overflow-y-auto">
+            <main className="flex-1 overflow-y-auto bg-[#D4E09B]">
                 {children}
             </main>
 
-            {/* Tab Bar */}
-            <TabBar />
+            {/* Tab bar */}
+            <TabBar/>
         </div>
         </div>
     );
