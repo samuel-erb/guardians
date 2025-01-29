@@ -17,7 +17,7 @@ import {
     Settings
 } from 'lucide-react';
 import Image from "next/image";
-import icon from "@/app/icon.svg";
+import icon from "@/app/icon.png";
 import Link from "next/link";
 import {SignalIcon} from "@heroicons/react/24/outline";
 import IOSNotification from "@/components/notification";
@@ -68,9 +68,9 @@ const IOSHomeScreen: React.FC = () => {
     ];
 
     return (
-        <div className="w-[393px] h-[852px] bg-gradient-to-b from-blue-500 to-purple-500 rounded-[55px] relative overflow-hidden">
+        <div className="w-[393px] h-[852px] bg-gradient-to-b from-blue-500 to-purple-500 rounded-none lg:rounded-[55px] relative overflow-hidden">
             {/* Status Bar */}
-            <div className="bg-transparent text-white h-12 flex items-center justify-between px-6">
+            <div className="bg-transparent text-white h-12 hidden md:flex items-center justify-between px-6">
                 <div className="text-sm">{new Date().getHours()}:{new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}</div>
                 <div className="flex items-center space-x-2">
                     {/* Signal Strength */}
@@ -84,7 +84,7 @@ const IOSHomeScreen: React.FC = () => {
                 </div>
             </div>
             <div className={`${show ? "": "hidden"}`}>
-                <IOSNotification appName={"iParent"} notificationText={"Zeit für den Medien-Check! 📲"} openLink={"/notifications"} icon={<div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
+                <IOSNotification appName={"Guardians"} notificationText={"Zeit für den Medien-Check! 📲"} openLink={"/notifications"} icon={<div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
                     <Image src={icon} alt={"Icon"} fill={false}/>
                 </div>} />
             </div>
@@ -101,10 +101,16 @@ const IOSHomeScreen: React.FC = () => {
                     />
                 ))}
                 <Link href={"/home"} className="flex flex-col items-center w-16 mb-6">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
+                    <div className={`w-14 h-14 rounded-2xl`}>
                         <Image src={icon} alt={"Icon"} fill={false}/>
                     </div>
-                    <span className="text-xs mt-1 text-white">iParent</span>
+                    <span className="text-xs mt-1 text-white">Gaurdians</span>
+                </Link>
+                <Link href={"/register"} className="flex flex-col items-center w-16 mb-6">
+                    <div className={`w-14 h-14 rounded-2xl`}>
+                        <Image src={icon} alt={"Icon"} fill={false}/>
+                    </div>
+                    <span className="text-xs mt-1 text-white">Guardians</span>
                 </Link>
             </div>
 

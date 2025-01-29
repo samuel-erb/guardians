@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from "next/image";
-import icon from "@/app/icon.svg";
+import icon from "@/app/icon.png";
 import {useRouter} from "next/navigation";
 
 interface RegistrationData {
@@ -94,7 +94,7 @@ export default function RegistrationProcess() {
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center`}>
                     <Image src={icon} alt={"Icon"} fill={false}/>
                 </div>
-                <h2 className="text-xl font-semibold mb-4">Willkommen bei iParent!</h2>
+                <h2 className="text-xl font-semibold mb-4">Willkommen bei Guardians!</h2>
             </div>
             <div className="space-y-2">
                 <label className="text-sm text-gray-600">E-Mail*</label>

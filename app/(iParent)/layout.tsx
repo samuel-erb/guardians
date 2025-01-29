@@ -19,10 +19,10 @@ export default function Layout({
     children: React.ReactNode;
 }) {
     return (
-        <div className={`${inter.className} bg-gray-900 min-h-screen flex gap-4 flex-col items-center justify-center`}>
-        <div className="w-[393px] h-[852px] bg-gray-50 flex flex-col relative overflow-hidden rounded-[55px] shadow-2xl">
+        <div className={`${inter.className} bg-[#D4E09B] min-h-screen flex gap-4 flex-col items-center justify-center`}>
+        <div className="w-[393px] h-[852px] bg-gray-50 flex flex-col relative overflow-hidden lg:rounded-[55px] shadow-2xl">
             {/* Status Bar */}
-            <div className="bg-black text-white h-12 flex items-center justify-between px-6 safe-top">
+            <div className="hidden bg-black text-white h-12 lg:flex items-center justify-between px-6 safe-top">
                 <div className="text-sm">{new Date().getHours()}:{new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()}</div>
                 <div className="flex items-center space-x-2">
                     {/* Signal Strength */}
