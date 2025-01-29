@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MagnifyingGlassIcon, XMarkIcon, ClockIcon, TagIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon, XMarkIcon, ClockIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 interface SearchSuggestion {
     id: number;
@@ -18,7 +18,7 @@ interface TopicCategory {
 
 export default function SearchPage() {
     const [searchQuery, setSearchQuery] = useState('');
-    const [isSearchFocused, setIsSearchFocused] = useState(false);
+    const [, setIsSearchFocused] = useState(false);
 
     const recentSearches = [
         "Gesunde Ernährung",
